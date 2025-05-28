@@ -8,7 +8,17 @@ import { JSDOM } from "jsdom";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+const allowedOrigins = ['https://ui-ux-analyzer.vercel.app'];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
