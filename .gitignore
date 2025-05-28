@@ -1,0 +1,24 @@
+# Ignore environment files
+.env
+*.env
+
+# Ignore node_modules everywhere
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Logs
+*.log
+
+# Build and dist folders
+client/build/
+client/dist/
+server/dist/
+
+# IDE and OS-specific
+.vscode/
+.DS_Store
+.idea/
+
+# Optional: Ignore coverage or test outputs
+coverage/
