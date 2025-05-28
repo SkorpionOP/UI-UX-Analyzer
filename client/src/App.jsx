@@ -60,7 +60,7 @@ export default function App() {
     try {
       // Step 1: Fetch HTML
       const fetchRes = await fetch(
-        `http://localhost:3001/fetch-html?url=${encodeURIComponent(url)}`,
+        `https://ui-ux-analyzer.onrender.com/fetch-html?url=${encodeURIComponent(url)}`,
         { signal }
       );
       
@@ -79,7 +79,7 @@ export default function App() {
       setProgress("Analyzing and improving UI/UX...");
 
       // Step 2: Analyze and improve
-      const analyzeRes = await fetch("http://localhost:3001/analyze-uiux", {
+      const analyzeRes = await fetch("https://ui-ux-analyzer.onrender.com/analyze-uiux", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ html: data.html }),
